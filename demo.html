@@ -3,27 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<title>rotate</title>
-	<!-- <link rel="stylesheet" href="css/phoneStyle.css" type="text/css" /> -->
 	<link href="http://webql.info/css/base.css" type="text/css" rel="stylesheet" />
 	<style type="text/css">
-		.rotate{position:relative;width:500px;height:300px;margin:100px auto;overflow:hidden;}
-		.rotate ul{position:absolute;top:0;}
-		.rotate li{float:left;display:inline;width:500px;height:300px;}
-		.ctrlBo{position:absolute;left:0;bottom:10px;width:100%;text-align:center;font-size:0;}
+		.rotate{position:relative;width:500px;height:300px;margin:0 auto;overflow:hidden;}
+		.rotate ul{position:absolute;top:0;left:0;}
+		.rotate li{float:left;display:inline;}
+		.ctrlBo{position:absolute;left:0;bottom:10px;z-index:2;width:100%;text-align:center;font-size:0;}
 		.ctrlBo a{display:inline-block;width:10px;height:10px;margin:0 2px;overflow:hidden;background:#ccc;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border-radius:50%;}
 		.ctrlBo a:hover{background:orange;}
 		.ctrlBo a.on{background:orange;}
 		.ctrlPo{display:none;}
 		.ctrlPo a{position:absolute;top:50%;width:30px;height:30px;margin-top:-15px;background-color:rgba(0,0,0,.3);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#4C000000', EndColorStr='#4C000000');}
-		.leftCtrlPo{left:10px;}
-		.rightCtrlPo{right:10px;}
+		.leftCtrl{left:10px;}
+		.rightCtrl{right:10px;}
 		.ctrlPo a:hover{background-color:rgba(0,0,0,.6);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#99000000', EndColorStr='#99000000');}
-		.leftCtrlPo i,.rightCtrlPo i{position:absolute;top:5px;width:0;height:0;border-width:10px;line-height:0;}
-		.leftCtrlPo i{left:0;border-style:dashed solid dashed dashed;border-color:transparent #fff transparent transparent;}
-		.rightCtrlPo i{right:0;border-style:dashed dashed dashed solid;border-color:transparent transparent transparent #fff;}
+		.leftCtrl i,.rightCtrl i{position:absolute;top:5px;width:0;height:0;border-width:10px;line-height:0;}
+		.leftCtrl i{left:0;border-style:dashed solid dashed dashed;border-color:transparent #fff transparent transparent;}
+		.rightCtrl i{right:0;border-style:dashed dashed dashed solid;border-color:transparent transparent transparent #fff;}
+
 	</style>
-    <script src="http://r.aicaicdn.com/js/plugins/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/jquery.rotate.js"></script>
 </head>
 <body>
 	<div class="rotate">
@@ -31,18 +29,33 @@
 			<li><a href="javascript:;"><img src="pic/rotate.jpg" alt="" /></a></li>
 			<li><a href="javascript:;"><img src="pic/rotate1.jpg" alt="" /></a></li>
 			<li><a href="javascript:;"><img src="pic/rotate2.jpg" alt="" /></a></li>
+			<li><a href="javascript:;"><img src="pic/rotate3.jpg" alt="" /></a></li>
+			<li><a href="javascript:;"><img src="pic/rotate4.jpg" alt="" /></a></li>
 		</ul>
 
 		<div class="ctrlBo">
 			<a href="javascript:;" class="on"></a>
 			<a href="javascript:;"></a>
 			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
+			<a href="javascript:;"></a>
 		</div>
 
 		<div class="ctrlPo">
-			<a href="javascript:;" class="leftCtrlPo"><i></i></a>
-			<a href="javascript:;" class="rightCtrlPo"><i></i></a>
+			<a href="javascript:;" class="leftCtrl"><i></i></a>
+			<a href="javascript:;" class="rightCtrl"><i></i></a>
 		</div>
 	</div>
+
+
+    <script src="http://r.aicaicdn.com/js/plugins/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.rotate.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$(".rotate").rotate({
+    			position:"left"
+    		});
+    	});
+    </script>
 </body>
 </html>
