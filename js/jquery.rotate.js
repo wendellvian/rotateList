@@ -1,10 +1,10 @@
 /*
- * rotate v1.0
+ * rotateList v1.0
  * Copyright (c) 2013 Wendell  http://blog.webql.info/
 */
 (function($){
     $.fn.extend({
-        rotate:function(options){
+        rotateList:function(options){
             var defaults = {
                 mouseCtrl:"click",                     // 切换导航鼠标事件
                 ctrlEleName:"ctrlBo",                  // 切换导航
