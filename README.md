@@ -20,15 +20,15 @@ rotateList
 
 **使用方法**
 ```js
-    $(element).rotate();
+    $(element).rotateList();
     // 默认横向拉洋片切换
     
-    $(element).rotate({
+    $(element).rotateList({
     position:"top"
     });
     // 纵向拉洋片切换
     
-    $(element).rotate({
+    $(element).rotateList({
     position:"opacity"
     });
     // 淡入淡出切换
