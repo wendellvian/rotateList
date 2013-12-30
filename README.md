@@ -15,7 +15,9 @@ rotateList
     focuSiblings:"a",                      // 当前焦点同辈的元素
     eleName:"a",                           // 切换导航按扭元素名
     leftCtrlClass:".leftCtrl",             // 单向左控制按扭
-    rightCtrlClass:".rightCtrl"            // 单向右控制按扭
+    rightCtrlClass:".rightCtrl",           // 单向右控制按扭
+    eleGroup:true,                         // 导航按扭组
+    eleGroupPo:true                        // 左右控制按扭组
 ```
 
 **使用方法**
@@ -32,4 +34,10 @@ rotateList
     position:"opacity"
     });
     // 淡入淡出切换
+    
+    $(element).rotateList({
+    eleGroup:false,// 关闭导航按扭组
+    eleGroupPo:false// 关闭左右控制按扭组
+    });
+    
 ```
