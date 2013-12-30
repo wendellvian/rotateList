@@ -1,5 +1,5 @@
 /*
- * rotateList v1.0
+ * rotateList v2.0
  * Copyright (c) 2013 Wendell  http://blog.webql.info/
 */
 (function($){
@@ -16,7 +16,9 @@
                 focuSiblings:"a",                      // 当前焦点同辈的元素
                 eleName:"a",                           // 切换导航按扭元素名
                 leftCtrlClass:".leftCtrl",             // 单向左控制按扭
-                rightCtrlClass:".rightCtrl"            // 单向右控制按扭
+                rightCtrlClass:".rightCtrl",           // 单向右控制按扭
+                eleGroup:true,                         // 导航按扭组
+                eleGroupPo:true                        // 左右控制按扭组
 
             }
             var options = $.extend(defaults,options);
@@ -26,10 +28,27 @@
             var oRotateUl = thisObj.find("ul").eq(0);
             var oRotateLi = oRotateUl.find("li");
             var leng = oRotateLi.length;
+            fnAppend();
             var oCtrlBo = $("."+options.ctrlEleName).find(options.eleName);
             var oCtrlPo = $("."+options.ctrlEleNamePo);
             var vIndex = 0;
             var timer = null;
+
+            function fnAppend(){
+                var alink = "<a href='javascript:;'></a>";
+                if(options.eleGroup){
+                    oRotate.append("<div class='ctrlBo'></div>");
+                    for(i=0;i<leng;i++){
+                        $("."+options.ctrlEleName).append(alink);
+                    }
+                }
+                oCtrlBo=oCtrlBo||$("."+options.ctrlEleName).find(options.eleName);
+                oCtrlBo.eq(0).addClass(options.focus);
+
+                if(options.eleGroupPo){
+                    oRotate.append("<div class='ctrlPo'><a href='javascript:;' class='leftCtrl'><i></i></a><a href='javascript:;' class='rightCtrl'><i></i></a></div>")
+                }
+            }
 
             switch(options.position){
                 case "left":
